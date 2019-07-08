@@ -38,6 +38,10 @@ const Blogs = props => {
               </a>
             </span>
           </span>
+          <p className="item__slogon">
+            Samenleving Het hebben van een partner die positief in het leven
+            staat, is mogelijk goed voor de….
+          </p>
         </div>
       </div>
 

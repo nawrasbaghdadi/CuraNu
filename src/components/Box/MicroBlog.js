@@ -10,7 +10,7 @@ const MicroBlog = props => {
   const withFooter = props.footer;
 
   return (
-    <div className="box box--blogs">
+    <div className="box box--blogs box--microblogs">
       <BoxHeader title={props.title} icon="pen" />
       <div className="box__content box__content--default">
         <div className="box__content__item">

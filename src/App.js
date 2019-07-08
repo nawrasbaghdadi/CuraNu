@@ -12,6 +12,9 @@ import MicroBlog from "./components/Box/MicroBlog";
 import Nieuws from "./components/Box/Nieuws";
 import Kwaliteitshandboek from "./components/Box/Kwaliteitshandboek";
 import Peilingen from "./components/Box/Peilingen";
+import MijnGroepen from "./components/Box/MijnGroepen";
+import MijnLinks from "./components/Box/MijnLinks";
+import Toevoegen from "./components/Box/Toevoegen";
 
 function App() {
   return (
@@ -27,6 +30,9 @@ function App() {
         <Nieuws title="Nieuws" footer={true} />
         <Kwaliteitshandboek title="Kwaliteitshandboek" footer={true} />
         <Peilingen title="Peilingen" footer={false} />
+        <MijnGroepen title="MijnGroepen" footer={true} />
+        <MijnLinks title="Mijn links" footer={false} />
+        <Toevoegen more="Mijn links" />
       </div>
     </div>
   );

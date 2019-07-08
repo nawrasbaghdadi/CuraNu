@@ -13,7 +13,7 @@ const Nieuws = props => {
       <BoxHeader title={props.title} icon="newspaper" />
       <div className="box__content box__content--default">
         <ul>
-          <li className="box__content__item niews ">
+          <li className="box__content__item niews">
             <a href="" className="link">
               <img src={img1} />
               <span className="clm-wrapper">
@@ -38,7 +38,7 @@ const Nieuws = props => {
                   10/12/2016
                 </time>
                 <span className="item__text bold">
-                  Commissiebrief over nieuwe Wlz
+                  Commissiebrief over nieuwe Wlz{" "}
                 </span>
               </span>
             </a>
@@ -57,7 +57,7 @@ const Nieuws = props => {
                   10/12/2016
                 </time>
                 <span className="item__text bold">
-                  VIO erkend als theoretisch goed
+                  VIO erkend als theoretisch goed{" "}
                 </span>
               </span>
             </a>
