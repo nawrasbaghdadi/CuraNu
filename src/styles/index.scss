@@ -1,0 +1,16 @@
+@import "./_reset.scss";
+@import "./flexMixin.scss";
+@import "./variables.scss";
+@font-face {
+  font-family: "openSans-regular";
+  src: url($regular-font) format("truetype");
+}
+@font-face {
+  font-family: "openSans-bold";
+  src: url($bold-font) format("truetype");
+}
+body {
+  font-family: "openSans-regular", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

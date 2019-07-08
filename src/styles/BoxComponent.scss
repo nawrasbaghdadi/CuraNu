@@ -1,0 +1,203 @@
+@import "./flexMixin.scss";
+@import "./_variables.scss";
+
+.box {
+  border: 1px solid #dae4ee;
+  margin-bottom: 20px;
+  @include flex(0 1 380px);
+  box-sizing: border-box;
+  &__header {
+    background: $tools-ba-color;
+    color: $box-header-text-color;
+    font-family: "openSans-bold";
+    height: 50px;
+    padding-left: 20px;
+    overflow: hidden;
+    @include font-size(18px);
+    @include flexbox();
+    @include flex-direction(row);
+    @include flex-wrap(nowrap);
+    @include justify-content(space-between);
+    @include align-items(center);
+    cursor: pointer;
+    transition: background 0.3s ease;
+    &--active {
+      background: #657189;
+    }
+    &--default {
+      cursor: default;
+      background: $bg-color;
+      padding-left: 0;
+      .inline-icon {
+        margin-left: auto;
+        background: $bg-color;
+      }
+      .box__title {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  &__icon {
+    width: 50px;
+    height: 50px;
+    @include flexbox();
+    @include flex-direction(row);
+    @include flex-wrap(nowrap);
+    @include justify-content(center);
+    @include align-items(center);
+    background-color: $tools-ba-color;
+    cursor: pointer;
+    svg {
+      transition: transform 0.3s ease;
+    }
+    & * {
+      pointer-events: none;
+    }
+    &--rotate {
+      svg {
+        transform: rotate(90deg);
+      }
+    }
+  }
+  .box__content {
+    height: auto;
+    max-height: 0;
+    opacity: 0;
+    padding: 0;
+    line-height: 140%;
+    overflow: hidden;
+    transition: all 0.3s;
+    box-sizing: content-box;
+    @include font-size(14px);
+
+    &--open,
+    &--default {
+      opacity: 1;
+      max-height: 125px;
+      padding: 16px;
+    }
+    &__item {
+      border-bottom: 1px solid $li-border-color;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+      a {
+        @include flexbox();
+        @include flex-direction(row);
+        @include flex-wrap(nowrap);
+        @include justify-content(flex-start);
+        @include align-items(center);
+        .item__media {
+          @include flex(0 0 69px);
+        }
+        .item__text {
+          @include flex(1 1 auto);
+          margin-left: 50px;
+          &--blogs {
+            margin-left: 30px;
+            @include flexbox();
+            @include flex-direction(row);
+            @include justify-content(flex-start);
+            .item__info {
+              @include flex(1 0 auto);
+              @include flexbox();
+              @include flex-direction(column);
+              @include justify-content(flex-start);
+            }
+          }
+        }
+      }
+      &:last-child {
+        border: none;
+        padding-bottom: 0;
+      }
+    }
+    &--default {
+      max-height: 100%;
+      .box__content__item {
+        a {
+          @include align-items(flex-start);
+        }
+      }
+    }
+  }
+
+  &__footer {
+    background-color: $box-header-bg-color;
+    @include flexbox();
+    @include flex-direction(row);
+    @include flex-wrap(nowrap);
+    @include justify-content(space-between);
+    @include align-items(center);
+    padding-left: 16px;
+    @include font-size(14px);
+  }
+  &--telfoonboek {
+    background: $telefoonBoek-bg-color url("./gfx//telephone.svg") right
+      no-repeat;
+    padding: 20px;
+    color: #fff;
+    h2 {
+      @include font-size(18px);
+      margin-bottom: 25px;
+    }
+  }
+  &--evenementen {
+    .item__text.bold {
+      font-family: "openSans-bold";
+    }
+  }
+  &--blogs {
+    .box__content--default {
+      padding: 20px;
+      .box__content__item {
+        @include flexbox();
+        @include justify-content(flex-start);
+        .item__media {
+          @include flex(0 0 auto);
+          @include align-self(flex-start);
+        }
+        .item__text {
+          @include flex(1 0 auto);
+          @include flexbox();
+          @include flex-direction(row);
+          @include justify-content(space-between);
+          margin-left: 30px;
+          &--blogs {
+            .item__info {
+              @include flexbox();
+              @include flex-direction(column);
+              @include justify-content(flex-start);
+            }
+            .interaction {
+              @include flexbox();
+              @include flex-direction(row);
+              @include flex-wrap(nowrap);
+              @include justify-content(flex-start);
+              @include align-items(center);
+              @include align-self(end);
+              a:first-child {
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .box__search {
+    margin-top: 20px;
+    .box__input {
+      width: 317px;
+      height: 40px;
+    }
+    .box__btn {
+      position: relative;
+      a {
+        position: absolute;
+        top: -2px;
+        right: -4px;
+      }
+    }
+  }
+}

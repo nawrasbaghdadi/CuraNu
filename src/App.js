@@ -1,23 +1,16 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.scss";
+import "./styles/App.scss";
+import HeaderComponent from "./components/HeaderComponent";
+import AccordionContainer from "./components/AccordionContainer";
+import data from "./data/Accordion.json";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+      <HeaderComponent />
+      <div className="page__container container">
+        <AccordionContainer data={data} firstOpen={false} keepOpen={true} />
+      </div>
     </div>
   );
 }

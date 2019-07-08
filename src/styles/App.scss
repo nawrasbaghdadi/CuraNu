@@ -1,0 +1,144 @@
+@import "./variables.scss";
+@import "./_flexMixin.scss";
+body {
+  color: $text-color;
+  @include font-size(16px);
+  a {
+    color: $text-color;
+    text-decoration: none;
+  }
+}
+.container {
+  max-width: $container;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100vw;
+}
+.page__container {
+  @include flexbox();
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+  @include justify-content(space-between);
+  @include align-items(flex-start);
+  margin-top: 40px;
+}
+
+.header {
+  background-color: $bg-color;
+  .header__element {
+    &--full-bg {
+      background: $header-bg-color;
+    }
+  }
+  .header__element__list {
+    @include flexbox();
+    @include flex-direction(row);
+    @include flex-wrap(nowrap);
+    @include justify-content(flex-start);
+    @include align-items(center);
+    &--site-nav {
+      height: 70px;
+      border-bottom: 1px solid #d8d8d8;
+    }
+    &--main-nav {
+      height: 86px;
+      font-family: "openSans-bold";
+      a {
+        color: $header-text-color;
+      }
+      .header__link:last-child {
+        margin-left: auto;
+      }
+    }
+  }
+  .header__link {
+    margin-right: 25px;
+    &--profile-settings {
+      margin-right: 12px;
+      margin-left: auto;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    &--profile-settings a,
+    &--notification a {
+      background-color: $tools-ba-color;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      padding: 10px;
+      font-size: 0;
+    }
+    &--notification a {
+      position: relative;
+      .notification {
+        display: inline-block;
+        font-size: 10px;
+        padding: 3px 6px;
+        position: absolute;
+        right: 7px;
+        top: 7px;
+        border-radius: 10px;
+        font-family: "openSans-bold";
+        background: $box-header-text-color;
+        color: $header-text-color;
+      }
+    }
+
+    a:hover {
+      color: $box-header-text-color;
+    }
+  }
+  .header__logo {
+    font-family: "openSans-bold";
+    height: 100px;
+    a {
+      @include flexbox();
+      @include flex-direction(row);
+      @include flex-wrap(nowrap);
+      @include justify-content(flex-start);
+      @include align-items(center);
+      height: 100%;
+    }
+    .header__logo__img {
+      width: 65px;
+      height: 62px;
+    }
+    .header__logo__name {
+      display: block;
+
+      @include font-size(18px);
+    }
+    .header__logo__title {
+      @include font-size(14px);
+    }
+    .header__logo__status {
+      @include font-size(18px);
+      margin-left: 15px;
+    }
+  }
+  .header__search {
+    background: $tools-ba-color;
+    font-family: inherit;
+    @include flexbox();
+    @include flex-direction(row);
+    @include flex-wrap(nowrap);
+    @include justify-content(flex-start);
+    @include align-items(center);
+    .header__input {
+      width: 335px;
+      height: 45px;
+      @include font-size(16px);
+      outline: none;
+      border: none;
+    }
+    .header__btn {
+      cursor: pointer;
+      svg {
+        position: relative;
+        left: 10px;
+        top: 10px;
+      }
+    }
+  }
+}
