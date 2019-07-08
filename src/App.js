@@ -11,6 +11,7 @@ import Blogs from "./components/Box/Blogs";
 import MicroBlog from "./components/Box/MicroBlog";
 import Nieuws from "./components/Box/Nieuws";
 import Kwaliteitshandboek from "./components/Box/Kwaliteitshandboek";
+import Peilingen from "./components/Box/Peilingen";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <MicroBlog title="MICROBLOG" footer={true} />
         <Nieuws title="Nieuws" footer={true} />
         <Kwaliteitshandboek title="Kwaliteitshandboek" footer={true} />
+        <Peilingen title="Peilingen" footer={false} />
       </div>
     </div>
   );

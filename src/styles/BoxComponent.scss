@@ -4,7 +4,7 @@
 .box {
   border: 1px solid #dae4ee;
   margin-bottom: 20px;
-  @include flex(0 1 380px);
+  @include flex(0 0 380px);
   box-sizing: border-box;
   &__header {
     background: $tools-ba-color;
@@ -70,12 +70,14 @@
     transition: all 0.3s;
     box-sizing: content-box;
     @include font-size(14px);
-
     &--open,
     &--default {
       opacity: 1;
       max-height: 125px;
-      padding: 16px;
+      padding: 24px;
+    }
+    &--default.peilingen p {
+      margin: 20px 0;
     }
     &__item {
       border-bottom: 1px solid $li-border-color;
@@ -112,9 +114,13 @@
         padding-bottom: 0;
       }
     }
-    &__item.Kwaliteitshandboek {
+    &__item.Kwaliteitshandboek,
+    &__item.niews {
+      .item__text {
+        margin-left: 0;
+      }
       .link {
-        margin: 20px 0 26px;
+        margin: 0 0 26px;
       }
       &:last-child {
         .link {
@@ -122,12 +128,7 @@
         }
       }
     }
-    &__item.niews,
-    &__item.Kwaliteitshandboek {
-      .item__text {
-        margin-left: 0;
-      }
-    }
+
     &--default {
       max-height: 100%;
       .box__content__item {
@@ -151,7 +152,6 @@
   &--telfoonboek {
     background: $telefoonBoek-bg-color url("./gfx//telephone.svg") right
       no-repeat;
-    padding: 20px;
     color: #fff;
     h2 {
       @include font-size(18px);
