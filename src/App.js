@@ -8,6 +8,7 @@ import DirectNaar from "./components/Box/DirectNaar";
 import TelefoonBoek from "./components/Box/TelefoonBoek.js";
 import Evenementen from "./components/Box/Evenementen";
 import Blogs from "./components/Box/Blogs";
+import MicroBlog from "./components/Box/MicroBlog";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <TelefoonBoek title="TELEFOONBOEK" footer={false} />
         <Evenementen title="Evenementen" footer={true} />
         <Blogs title={"Blogs"} footer={true} />
+        <MicroBlog title="MICROBLOG" footer={true} />
       </div>
     </div>
   );

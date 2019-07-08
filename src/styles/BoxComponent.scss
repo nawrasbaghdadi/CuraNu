@@ -153,6 +153,38 @@
       .box__content__item {
         @include flexbox();
         @include justify-content(flex-start);
+        @include flex-wrap(wrap);
+        border-bottom: none;
+        &:first-child {
+          margin-bottom: 70px;
+        }
+        .box__textAria {
+          width: 329px;
+          height: 180px;
+          box-sizing: border-box;
+          border: 2px solid $li-border-color;
+          outline: none;
+        }
+        .labels {
+          margin-top: 14px;
+          @include flexbox();
+          @include flex-direction(row);
+          @include flex-wrap(nowrap);
+          @include justify-content(flex-start);
+          @include align-items(center);
+          a:first-child {
+            margin-right: 15px;
+          }
+          button {
+            margin-left: auto;
+            width: 107px;
+            height: 32px;
+            background-color: $btn-bg-color;
+            color: $btn-color;
+            border: none;
+            @include font-size(17px);
+          }
+        }
         .item__media {
           @include flex(0 0 auto);
           @include align-self(flex-start);
@@ -182,9 +214,13 @@
             }
           }
         }
+        .item__slogon {
+          margin-top: 25px;
+        }
       }
     }
   }
+
   .box__search {
     margin-top: 20px;
     .box__input {
