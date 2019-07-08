@@ -38,7 +38,7 @@ const Nieuws = props => {
                   10/12/2016
                 </time>
                 <span className="item__text bold">
-                  Commissiebrief over nieuwe Wlz{" "}
+                  Commissiebrief over nieuwe Wlz
                 </span>
               </span>
             </a>
@@ -57,7 +57,7 @@ const Nieuws = props => {
                   10/12/2016
                 </time>
                 <span className="item__text bold">
-                  VIO erkend als theoretisch goed{" "}
+                  VIO erkend als theoretisch goed
                 </span>
               </span>
             </a>

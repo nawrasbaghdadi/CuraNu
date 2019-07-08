@@ -112,7 +112,18 @@
         padding-bottom: 0;
       }
     }
-    &__item.niews {
+    &__item.Kwaliteitshandboek {
+      .link {
+        margin: 20px 0 26px;
+      }
+      &:last-child {
+        .link {
+          margin: 0;
+        }
+      }
+    }
+    &__item.niews,
+    &__item.Kwaliteitshandboek {
       .item__text {
         margin-left: 0;
       }
