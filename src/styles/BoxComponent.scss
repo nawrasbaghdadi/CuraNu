@@ -112,6 +112,11 @@
         padding-bottom: 0;
       }
     }
+    &__item.niews {
+      .item__text {
+        margin-left: 0;
+      }
+    }
     &--default {
       max-height: 100%;
       .box__content__item {
@@ -143,6 +148,14 @@
     }
   }
   &--evenementen {
+    .box__content__item {
+      @include flexbox();
+      @include justify-content(space-between);
+      @include flex-wrap(nowrap);
+      .link {
+        @include flex(1 0 auto);
+      }
+    }
     .item__text.bold {
       font-family: "openSans-bold";
     }
@@ -235,5 +248,10 @@
         right: -4px;
       }
     }
+  }
+  .clm-wrapper {
+    @include flexbox();
+    @include flex-direction(column);
+    margin-left: 10px;
   }
 }
