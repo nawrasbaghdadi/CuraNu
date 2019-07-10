@@ -1,0 +1,61 @@
+@import "./flexMixin.scss";
+@import "./_variables.scss";
+
+.contact {
+  @include flexbox();
+  @include flex-direction(row);
+  @include flex-wrap(nowrap);
+  @include justify-content(space-between);
+  @include align-items(flex-start);
+  margin: 50px 0;
+  h2 {
+    @include font-size(20px);
+    margin-bottom: 30px;
+  }
+  &__submenu {
+    @include flex(0 0 23%);
+
+    .submenu__item {
+      margin: 15px 0;
+      .link {
+        border-bottom: 1px solid $btn-bg-color;
+      }
+    }
+  }
+  &__form {
+    form {
+      margin-top: 30px;
+    }
+    .field {
+      @include flexbox();
+      @include flex-direction(row);
+      @include flex-wrap(nowrap);
+      @include justify-content(flex-start);
+      @include align-items(center);
+      margin-bottom: 15px;
+      .label {
+        @include flex(0 0 200px);
+      }
+      input,
+      textarea {
+        width: 275px;
+        height: 30px;
+        border-radius: 10px;
+        border: 1px solid $btn-bg-color;
+        padding: 5px;
+        outline: none;
+        @include font-size(17px);
+        &.wrong {
+          border: 1px solid red;
+        }
+      }
+      textarea {
+        height: 150px;
+      }
+    }
+    .message-wrong {
+      @include font-size(11px);
+      color: red;
+    }
+  }
+}
