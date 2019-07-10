@@ -7,11 +7,17 @@ const LayoutComponent = props => {
   }
   for (let i = 0; i < props.children.length; i++) {
     const columnIndex = i % props.columns;
-    columns[`column${columnIndex}`].push(<div>{props.children[i]}</div>);
+    columns[`column${columnIndex}`].push(
+      <div key={`box_${i}`}>{props.children[i]}</div>
+    );
   }
 
   for (let i = 0; i < props.columns; i++) {
-    layout.push(<div className="colum">{columns[`column${i}`]}</div>);
+    layout.push(
+      <div className="colum" key={`column__${i}`}>
+        {columns[`column${i}`]}
+      </div>
+    );
   }
 
   return <div className="page__container container">{layout}</div>;

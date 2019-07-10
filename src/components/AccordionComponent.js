@@ -1,19 +1,10 @@
-import React, { useState, useCallback } from "react";
+import React from "react";
 import SvgArrowRight from "../Icons/ArrowRight";
 import "../styles/BoxComponent.scss";
 
 const Accordion = props => {
-  const measuredRef = useCallback(node => {
-    if (node !== null) {
-      setHeight(node.scrollHeight + 20);
-    }
-  }, []);
-  const [height, setHeight] = useState(0);
-  let styles = {
-    height: height
-  };
   return (
-    <div className="box__element">
+    <div className="box__element" key={`acciner_${props.accordionID}`}>
       <div
         className={`box__header ${props.active ? "box__header--active" : ""}`}
         onClick={props.onClickHandle}
@@ -27,8 +18,6 @@ const Accordion = props => {
       </div>
       {
         <div
-          style={styles}
-          ref={measuredRef}
           className={`box__content ${
             props.active ? "box__content--open" : ""
           }`}>

@@ -38,7 +38,7 @@ const AccordionContainer = props => {
         onClickHandle={changeActive}
         active={ele.open}
         accordionID={ele.id}
-        key={ele.id + "_acc"}
+        key={`acc_${ele.id}`}
       />
     );
   });
