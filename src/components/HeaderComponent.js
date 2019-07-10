@@ -63,7 +63,7 @@ const HeaderComponent = props => {
           <li className="header__link">
             <a href="#">Kwaliteitshandboek</a>
           </li>
-          <li className="header__link">
+          <li className="header__link header__link--search">
             <form className="header__search">
               <input type="text" className="header__input" />
               <span className="header__btn">

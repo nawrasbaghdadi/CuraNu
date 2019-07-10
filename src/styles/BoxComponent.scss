@@ -161,7 +161,7 @@
       @include justify-content(space-between);
       @include flex-wrap(nowrap);
       .link {
-        @include flex(1 0 auto);
+        @include flex(1 1 auto);
       }
     }
   }
@@ -183,13 +183,20 @@
         @include justify-content(flex-start);
         @include flex-wrap(wrap);
         border-bottom: none;
-
-        .box__textAria {
+        @include break-at(medium) {
+          form {
+            width: 100%;
+          }
+        }
+        .box__textArea {
           width: 329px;
           height: 180px;
           box-sizing: border-box;
           border: 2px solid $li-border-color;
           outline: none;
+          @include break-at(medium) {
+            width: 100%;
+          }
         }
         .labels {
           margin-top: 14px;
@@ -212,6 +219,11 @@
           @include flex-direction(row);
           @include justify-content(space-between);
           margin-left: 30px;
+          @include break-at(medium) {
+            & {
+              @include flex(1 1 85%);
+            }
+          }
           &--blogs {
             .item__info {
               @include flexbox();
@@ -233,6 +245,11 @@
         }
         .item__slogon {
           margin-top: 25px;
+          @include break-at(medium) {
+            & {
+              @include flex(1 1 85%);
+            }
+          }
         }
       }
     }
@@ -243,6 +260,9 @@
     .box__input {
       width: 317px;
       height: 40px;
+      @include break-at(small) {
+        width: 290px;
+      }
     }
     .box__btn {
       position: relative;

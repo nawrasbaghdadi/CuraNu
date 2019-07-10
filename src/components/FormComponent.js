@@ -57,7 +57,7 @@ const Form = () => {
           </aside>
           <div className="contact__form">
             <h2>Contact pagina</h2>
-            <p>
+            <p className="contact__intro">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
               convallis, magna nec ecitur tempor, dui eros fringilla tellus,
               vitae consequat augue dolor at mauris. Nunc tempor rutrum dolor,

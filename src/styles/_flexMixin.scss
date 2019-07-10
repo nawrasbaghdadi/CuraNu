@@ -87,3 +87,18 @@
   -ms-align-self: $align;
   align-self: $align;
 }
+@mixin break-at($breakpoint) {
+  @if $breakpoint == "small" {
+    @media (max-width: 640px) {
+      @content;
+    }
+  } @else if $breakpoint == "medium" {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $breakpoint == "large" {
+    @media (max-width: 1440px) {
+      @content;
+    }
+  }
+}

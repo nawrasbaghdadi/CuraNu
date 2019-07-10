@@ -13,6 +13,10 @@ body {
   margin: 0 auto;
   box-sizing: border-box;
   width: 100vw;
+  @include break-at(medium) {
+    max-width: 100%;
+    padding: 10px;
+  }
 }
 .page__container {
   @include flexbox();
@@ -21,11 +25,25 @@ body {
   @include justify-content(space-between);
   @include align-items(flex-start);
   margin: 40px auto;
+  @include break-at(medium) {
+    margin-top: 20px;
+  }
+  @include break-at(small) {
+    margin-top: 80px;
+  }
   .colum {
     @include flex(1 1 0%);
     margin-left: 25px;
     &:first-child {
       margin: 0;
+    }
+    @include break-at(small) {
+      margin: 0;
+    }
+    @include break-at(medium) {
+      &:last-child {
+        margin: 0;
+      }
     }
   }
 }
@@ -42,6 +60,10 @@ body {
     @include flex-wrap(nowrap);
     @include justify-content(flex-start);
     @include align-items(center);
+    @include break-at(small) {
+      @include flex-wrap(wrap);
+      position: relative;
+    }
     &--site-nav {
       height: 70px;
       border-bottom: 1px solid #d8d8d8;
@@ -62,9 +84,27 @@ body {
     &--profile-settings {
       margin-right: 12px;
       margin-left: auto;
+      @include break-at(small) {
+        position: absolute;
+        right: 0;
+        top: 92px;
+      }
     }
-    &:last-child {
-      margin-right: 0;
+    &--notification {
+      @include break-at(small) {
+        top: 39px;
+        position: absolute;
+        right: 12px;
+        margin: 0;
+      }
+    }
+    &--search {
+      @include break-at(small) {
+        margin-right: 0;
+        position: absolute;
+        bottom: -49px;
+        width: 95%;
+      }
     }
     &--profile-settings a,
     &--notification a {
@@ -90,7 +130,6 @@ body {
         color: $header-text-color;
       }
     }
-
     a:hover {
       color: $box-header-text-color;
     }
@@ -137,6 +176,13 @@ body {
       @include font-size(16px);
       outline: none;
       border: none;
+      @include break-at(medium) {
+        width: 100%;
+      }
+      @include break-at(small) {
+        border-bottom: 1px solid $li-border-color;
+        border-radius: 0 0 10px 10px;
+      }
     }
     .header__btn {
       cursor: pointer;
