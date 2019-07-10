@@ -20,9 +20,15 @@ body {
   @include flex-wrap(wrap);
   @include justify-content(space-between);
   @include align-items(flex-start);
-  margin-top: 40px;
+  margin: 40px auto;
+  .colum {
+    @include flex(1 1 0%);
+    margin-left: 25px;
+    &:first-child {
+      margin: 0;
+    }
+  }
 }
-
 .header {
   background-color: $bg-color;
   .header__element {

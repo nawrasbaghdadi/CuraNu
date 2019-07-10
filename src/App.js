@@ -1,5 +1,4 @@
 import React from "react";
-
 import "./styles/App.scss";
 import HeaderComponent from "./components/HeaderComponent";
 import AccordionContainer from "./components/AccordionContainer";
@@ -15,25 +14,31 @@ import Peilingen from "./components/Box/Peilingen";
 import MijnGroepen from "./components/Box/MijnGroepen";
 import MijnLinks from "./components/Box/MijnLinks";
 import Toevoegen from "./components/Box/Toevoegen";
+import LayoutComponent from "./components/LayoutComponent";
+const componentsArray = [
+  <AccordionContainer data={data} firstOpen={true} keepOpen={true} />,
+  <DirectNaar title="Direct naar" footer={false} />,
+  <TelefoonBoek title="TELEFOONBOEK" footer={false} />,
+  <Evenementen title="Evenementen" footer={true} />,
+  <Blogs title="Blogs" footer={true} />,
+  <MicroBlog title="MICROBLOG" footer={true} />,
+  <Nieuws title="Nieuws" footer={true} />,
+  <Kwaliteitshandboek title="Kwaliteitshandboek" footer={true} />,
+  <MijnGroepen title="MijnGroepen" footer={true} />,
+  <MijnLinks title="Mijn links" footer={false} />,
+  <Peilingen title="Peilingen" footer={false} />,
+  <Toevoegen more="Mijn links" />
+];
 
 function App() {
   return (
     <div className="App">
       <HeaderComponent />
-      <div className="page__container container">
-        <AccordionContainer data={data} firstOpen={false} keepOpen={true} />
-        <DirectNaar title="Direct naar" footer={false} />
-        <TelefoonBoek title="TELEFOONBOEK" footer={false} />
-        <Evenementen title="Evenementen" footer={true} />
-        <Blogs title="Blogs" footer={true} />
-        <MicroBlog title="MICROBLOG" footer={true} />
-        <Nieuws title="Nieuws" footer={true} />
-        <Kwaliteitshandboek title="Kwaliteitshandboek" footer={true} />
-        <Peilingen title="Peilingen" footer={false} />
-        <MijnGroepen title="MijnGroepen" footer={true} />
-        <MijnLinks title="Mijn links" footer={false} />
-        <Toevoegen more="Mijn links" />
-      </div>
+      <LayoutComponent columns={3}>
+        {componentsArray.map(ele => {
+          return ele;
+        })}
+      </LayoutComponent>
     </div>
   );
 }
