@@ -15,7 +15,7 @@ const MicroBlog = props => {
       <div className="box__content box__content--default">
         <div className="box__content__item">
           <form>
-            <textarea className="box__textAria" />
+            <textarea className="box__textArea" />
             <div className="labels">
               <a href="#">
                 <img src={img} />
